@@ -1,18 +1,20 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../store";
-
-type Category = {
-  id: number;
-  title: string;
-  parentId: number;
-};
+import { categoryType } from "../../types/categoryTypes";
 
 interface CategoryData {
-  categoryList: Category[];
+  categoryList: categoryType[];
 }
 
 const initialState: CategoryData = {
-  categoryList: [],
+  categoryList: [
+    { id: 1, title: "Category 1", parentId: null },
+    { id: 2, title: "Subcategory 1", parentId: 1 },
+    { id: 3, title: "Subcategory 2", parentId: 1 },
+    { id: 5, title: "Subcategory 3", parentId: 3 },
+    { id: 6, title: "Subcategory 3", parentId: 3 },
+    { id: 7, title: "Subcategory 3", parentId: 3 },
+  ],
 };
 
 const categorySlice = createSlice({
@@ -22,6 +24,5 @@ const categorySlice = createSlice({
 });
 
 export const {} = categorySlice.actions;
-export const selectCategoryList = (state: RootState) =>
-  state.categories.categoryList;
+export const selectCategoryList = (state: RootState) => state.categories;
 export default categorySlice.reducer;
