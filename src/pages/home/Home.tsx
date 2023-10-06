@@ -1,4 +1,4 @@
-import Category from "../../components/Category";
+import Category from "../../components/category/Category";
 import { selectCategoryList } from "../../redux/category/categorySlice";
 import { useAppSelector } from "../../redux/hooks";
 import { getSubcategories } from "../../utils/subCategoriesHelper";
