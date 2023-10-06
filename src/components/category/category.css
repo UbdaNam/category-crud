@@ -1,0 +1,55 @@
+.content-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+}
+
+.add-btn,
+.save-btn,
+.cancel-btn,
+.delete-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.add-btn i,
+.save-btn i,
+.cancel-btn i,
+.delete-btn i {
+  font-size: 18px;
+}
+
+.add-btn i {
+  color: #cacfd5;
+}
+
+.edit-btn {
+  display: flex;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: none;
+  background-color: #cacfd5;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.save-btn i {
+  color: #57bf78;
+}
+
+.cancel-btn i {
+  color: #fac72b;
+}
+
+.edit-btn i {
+  color: #fff;
+  font-size: 10px;
+}
+
+.delete-btn i {
+  color: #fe5b7d;
+}
