@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../store";
 import { categoryType } from "../../types/categoryTypes";
 
@@ -7,22 +7,38 @@ interface CategoryData {
 }
 
 const initialState: CategoryData = {
-  categoryList: [
-    { id: 1, title: "Category 1", parentId: null },
-    { id: 2, title: "Subcategory 1", parentId: 1 },
-    { id: 3, title: "Subcategory 2", parentId: 1 },
-    { id: 5, title: "Subcategory 3", parentId: 3 },
-    { id: 6, title: "Subcategory 3", parentId: 3 },
-    { id: 7, title: "Subcategory 3", parentId: 3 },
-  ],
+  categoryList: [{ id: 1, title: "Category 1", parentId: null }],
 };
 
 const categorySlice = createSlice({
   name: "categories",
   initialState,
-  reducers: {},
+  reducers: {
+    addSubcategory: (state, { payload }: PayloadAction<categoryType>) => {
+      state.categoryList.push(payload);
+    },
+    deleteCategory: (state, { payload }: PayloadAction<number>) => {
+      const { categoryList } = state;
+      state.categoryList = categoryList.filter(
+        (c) => c.id !== payload && c.parentId !== payload
+      );
+    },
+    editCategoryTitle: (
+      state,
+      { payload }: PayloadAction<{ categoryId: number; newTitle: string }>
+    ) => {
+      const { categoryId, newTitle } = payload;
+      const category = state.categoryList.find(
+        (category) => category.id === categoryId
+      );
+      if (category) {
+        category.title = newTitle;
+      }
+    },
+  },
 });
 
-export const {} = categorySlice.actions;
+export const { addSubcategory, deleteCategory, editCategoryTitle } =
+  categorySlice.actions;
 export const selectCategoryList = (state: RootState) => state.categories;
 export default categorySlice.reducer;
