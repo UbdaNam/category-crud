@@ -1,0 +1,9 @@
+header {
+  margin-inline: 30px;
+  padding-block: 15px;
+  border-bottom: 1px solid #ccc;
+}
+
+header h1 {
+  font-weight: 500;
+}
