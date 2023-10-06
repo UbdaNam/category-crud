@@ -1,3 +1,8 @@
+.category-tree {
+  display: grid;
+  place-items: center;
+}
+
 .category-tree ul {
   padding-top: 20px;
   position: relative;
@@ -50,6 +55,7 @@
 .category-tree li:first-child::after {
   border-radius: 5px 0 0 0;
 }
+
 .category-tree ul ul::before {
   content: "";
   position: absolute;
@@ -60,7 +66,7 @@
   height: 20px;
 }
 
-.category-tree li div {
+.category-tree li .title {
   border: 1px solid #ccc;
   padding: 5px 60px;
   text-decoration: none;
@@ -71,8 +77,8 @@
   border-radius: 5px;
 }
 
-.category-tree li div:hover,
-.category-tree li div:hover + ul li div {
+.category-tree li .title:hover,
+.category-tree li .title:hover + ul li .title {
   background: #c8e4f8;
   color: #000;
   border: 1px solid #94a0b4;
