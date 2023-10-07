@@ -2,8 +2,60 @@ header {
   margin-inline: 30px;
   padding-block: 15px;
   border-bottom: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 header h1 {
   font-weight: 500;
+}
+
+.zoom-container {
+  display: flex;
+  align-items: center;
+}
+
+.zoom-select {
+  padding: 10px 15px;
+  appearance: none;
+  border: none;
+  color: #b9b1b1;
+  text-align: center;
+  border-inline: 2px solid rgba(241, 240, 240, 0.5);
+}
+
+.zoom-out-btn,
+.zoom-in-btn {
+  background-color: #fff;
+  color: #b9b1b1;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.zoom-container i {
+  font-size: 11px;
+}
+
+.zoom-select:hover,
+.zoom-in-btn:hover,
+.zoom-out-btn:hover {
+  background-color: #c7cad2;
+  color: #fafafa;
+}
+
+.zoom-select:focus,
+.zoom-select:focus option {
+  outline: none;
+}
+
+.zoom-select > option {
+  background-color: #fff !important;
+  color: #b9b1b1;
+  text-align: left;
+}
+
+.zoom-select > option:checked {
+  color: #6d74e4;
 }

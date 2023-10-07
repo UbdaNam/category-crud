@@ -1,6 +1,7 @@
 .category-tree {
   display: grid;
   place-items: center;
+  transform-origin: top center;
 }
 
 .category-tree ul {
