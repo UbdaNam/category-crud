@@ -128,6 +128,13 @@ const Category = ({ category, categoryList }: CategoryProps) => {
         </ul>
       ) : isVisible && subcategories.length > 0 ? (
         <ul>
+          {subcategories.map((subcategory) => (
+            <Category
+              key={subcategory.id}
+              category={subcategory}
+              categoryList={categoryList}
+            />
+          ))}
           <li>
             <div className="content-container">
               <h5
@@ -147,13 +154,6 @@ const Category = ({ category, categoryList }: CategoryProps) => {
               </button>
             </div>
           </li>
-          {subcategories.map((subcategory) => (
-            <Category
-              key={subcategory.id}
-              category={subcategory}
-              categoryList={categoryList}
-            />
-          ))}
         </ul>
       ) : subcategories.length > 0 ? (
         <ul>
