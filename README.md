@@ -50,6 +50,8 @@ Category CRUD is a dynamic web application that enables users to view and manage
 - **Add sub-categories**
 - **Edit category**
 - **Delete category**
+- **Zoom category tree**
+- **Drag category tree**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
