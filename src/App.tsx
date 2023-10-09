@@ -6,7 +6,7 @@ function App() {
   const [scale, setScale] = useState(100);
 
   return (
-    <div className="App">
+    <div className="app">
       <Header setZoom={setScale} zoomPercent={scale} />
       <Home zoomPercent={scale} />
     </div>
