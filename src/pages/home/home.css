@@ -1,6 +1,13 @@
 .category-tree {
-  display: grid;
-  place-items: center;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  flex: 1;
+}
+
+.category-tree > ul:first-child {
+  position: absolute;
+  user-select: none;
   transform-origin: top center;
 }
 

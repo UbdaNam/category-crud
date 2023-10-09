@@ -1,0 +1,6 @@
+name: category-crud
+env:
+  - key: NODE_ENV
+    value: production
+buildCommand: npm run build
+startCommand: npm run start

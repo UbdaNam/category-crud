@@ -3,3 +3,8 @@ export interface categoryType {
   title: string;
   parentId: number | null;
 }
+
+export type CategoryPositionType = {
+  x: number;
+  y: number;
+};
